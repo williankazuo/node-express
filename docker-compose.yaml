@@ -1,0 +1,14 @@
+version: '3.5'
+
+services:
+  postgres:
+    image: postgres
+    environment:
+      - POSTGRES_USER=financial_app
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=financial_management
+    volumes:
+      - ./volume_docker/data/:/var/lib/postgresql/data
+      # - ./ops/sql:/docker-entrypoint-initdb.d
+    ports:
+      - "5432:5432"
